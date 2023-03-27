@@ -1,0 +1,8 @@
+name: Fortune Number Module
+description: Creates a page showing "Fortune Number".
+package: Custom
+
+type: module
+core_version_requirement: ^9 || ^10
+
+php: 8.0

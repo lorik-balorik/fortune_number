@@ -1,0 +1,22 @@
+{
+    "name": "drupal/fortune_number",
+    "description": "Example Project assignment to count visitors of the page",
+    "type": "drupal-module",
+    "require": {
+        "drupal/core": "^9 || ^10"
+    },
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Drupal\\FortuneNumber\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Li R (lorik-balorik)",
+            "email": "lorik.balorik@gmail.com",
+            "homepage": "https://github.com/lorik-balorik",
+            "role": "Creator"
+        }
+    ]
+}

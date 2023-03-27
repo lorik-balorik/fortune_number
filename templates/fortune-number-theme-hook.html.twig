@@ -1,0 +1,17 @@
+<h4>Hello, curious stranger!</h4>
+
+{% if visitorNumber %}
+  <p>You are a visitor number: <b>{{ visitorNumber }}</b>.</p>
+
+  {% if visitorNumber == 10 %}
+    <p>Congratulations!</p>
+    <p>You have just won nothing...</p>
+  {% else %}
+    <p>Keep going, maybe you become a winner next time.</p>
+  {% endif %}
+
+{% else %}
+  <p>Sorry, right now we don't have access to visits' statistics</p>
+{% endif %}
+
+<p>Ciao!</p>

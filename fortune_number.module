@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function fortune_number_theme($existing, $type, $theme, $path) {
+
+  return [
+    'fortune_number_theme_hook' => [
+      'render element' => 'children',
+      'template' => 'fortune-number-theme-hook',
+      'path' => $path . '/templates',
+      'variables' => [
+        'visitorNumber' => null
+      ]
+    ]
+  ];
+
+}

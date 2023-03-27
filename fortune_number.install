@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Install/uninstall fortune_number module.
+ */
+
+
+/**
+ * Implements hook_schema().
+ */
+function visitors_statistics_schema() {
+  $schema['visitors_statistics'] = [
+    'fields' => [
+      'visitor_id' => [
+        'description' => 'The primary identifier for visitors',
+        'type' => 'serial',
+        'size' => 'tiny',
+        'not null' => TRUE,
+      ],
+
+      'visitor_ip' => [
+        'type' => 'varchar',
+        'length' => 45,
+        'not null' => TRUE,
+        'default' => '',
+      ]
+    ],
+
+    'primary key' => [
+      'visitor_id'
+    ],
+
+    'unique key' => [
+      'visitor_id'
+    ],
+
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function fortune_number_install($is_syncing) {
+  if ( !$is_syncing ) {
+    \Drupal::classResolver(InstallHelper::class)->importContent();
+
+    $dirName = __DIR__ . '/public';
+    $counterFileName = $dirName . '/counterVisitors.txt';
+
+    if( !file_exists( $dirName ) ) {
+      mkdir ( $dirName );
+    }
+
+    $f = fopen( $counterFileName,"a+" );
+    fclose( $f );
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function fortune_number_uninstall() {
+    $dirName = __DIR__ . '/public';
+
+     if( file_exists( $dirName ) ) {
+       rmdir ( $dirName );
+     }
+}

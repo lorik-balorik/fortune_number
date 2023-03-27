@@ -1,0 +1,7 @@
+fortune_number.index_action:
+  path: '/indexAction/page'
+  defaults:
+    _controller: '\Drupal\fortune_number\Controller\FortuneNumberController::indexAction'
+    _title: 'Fortune Number Generator'
+  requirements:
+    _permission: 'access content'

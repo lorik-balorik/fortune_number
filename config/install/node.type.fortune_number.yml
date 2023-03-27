@@ -1,0 +1,15 @@
+type: fortune_number
+name: Fortune Number
+description: 'Use <em>fortune number</em> content to get better development.'
+help: ''
+new_revision: false
+display_submitted: true
+preview_mode: 1
+status: true
+langcode: en
+dependencies:
+  module:
+    - fortune_number
+  enforced:
+    module:
+      - fortune_number
