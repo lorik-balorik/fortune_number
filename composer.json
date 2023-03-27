@@ -1,5 +1,5 @@
 {
-    "name": "drupal/fortune_number",
+    "name": "lorik/fortune_number",
     "description": "Example Project assignment to count visitors of the page",
     "type": "drupal-module",
     "require": {
