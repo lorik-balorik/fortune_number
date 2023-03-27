@@ -9,7 +9,7 @@
 /**
  * Implements hook_schema().
  */
-function visitors_statistics_schema() {
+function fortune_number_schema() {
   $schema['visitors_statistics'] = [
     'fields' => [
       'visitor_id' => [
@@ -44,9 +44,6 @@ function visitors_statistics_schema() {
  * Implements hook_install().
  */
 function fortune_number_install($is_syncing) {
-  if ( !$is_syncing ) {
-    \Drupal::classResolver(InstallHelper::class)->importContent();
-
     $dirName = __DIR__ . '/public';
     $counterFileName = $dirName . '/counterVisitors.txt';
 
@@ -56,7 +53,6 @@ function fortune_number_install($is_syncing) {
 
     $f = fopen( $counterFileName,"a+" );
     fclose( $f );
-  }
 }
 
 /**
@@ -68,4 +64,6 @@ function fortune_number_uninstall() {
      if( file_exists( $dirName ) ) {
        rmdir ( $dirName );
      }
+
+    drupal_uninstall_schema('fortune_number');
 }
